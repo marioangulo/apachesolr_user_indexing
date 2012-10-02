@@ -84,8 +84,8 @@ function apachesolr_users_cron() {
 function apachesolr_users_user_to_document($account, $namespace) {
   module_load_include('php', 'apachesolr', 'Apache_Solr_Document');
   $document = new ApacheSolrDocument();
-  $document->bundle = 'Members';
-  $document->bundle_name = 'members';
+  $document->bundle = 'Users';
+  $document->bundle_name = 'users';
   $document->id = apachesolr_document_id($account->uid, 'user');
   $document->site = url(NULL, array('absolute' => TRUE));
   $document->hash = apachesolr_site_hash();
